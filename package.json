@@ -1,0 +1,17 @@
+{
+  "name": "pre-entrega-curso-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laorivera/pre-entrega-lab.git"
+  },
+  "keywords": [],
+  "author": "Ladislao Rivera",
+  "license": "MIT",
+  "type": "module"
+}
