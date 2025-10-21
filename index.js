@@ -1,31 +1,42 @@
 import { Luser } from './useraccess.js';
 import { Rmanager } from './manager.js';
+import { dBox } from './display.js';
 
 async function main(){
 
-const User = new Luser("Dagoberto", "abc123");
+const url = 'https://fakestoreapi.com/';
+const args = process.argv.slice(2);
+const method = args[0];
+const request = args[1];
 
-const Rm = new Rmanager('https://fakestoreapi.com/products')
+console.log(method);
+console.log(request);
 
-console.log(User.getId());
-console.log(User.getUsername());
+//clase para administrar fetch 
+const Rm = new Rmanager(url, method, request);
+//envia peticon GET y muestra listado en consola
 
-//Rm.fetchProduct().then(()=> {console.log(Rm.getProduct())})
-
+const argx = process.argv.slice(3);
+const [id, title, price, category] = argx;
+//Rm.fetchProducts().then(() => {console.log(Rm.getProduct())})
+// anade json body 
 Rm.setPayload({
-    id: 0,
-    title: "string",
-    price: 0.1,
-    description: "string", 
-    category: "string",
-    image: "http://example.com"
-});
+        id: id,
+        title: title,
+        price: price,
+        description: "string", 
+        category: category,
+        image: "http://example.com"
+ });
 
-Rm.postProduct().then(() => {console.log(Rm.getProduct())})
+
+Rm.isRequestValid();
+// envia peticion POST y Muestra respuesta en consola
+//Rm.postProducts().then(() => {console.log(Rm.getProduct())})
 
 }
-
-main().catch(error => {console.error("1", error)})
+//ejecuta main con error catch
+main()//.catch(error => {console.error("1", error)})
 
 
 
