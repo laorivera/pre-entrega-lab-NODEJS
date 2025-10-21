@@ -6,21 +6,22 @@ async function main(){
 
 const url = 'https://fakestoreapi.com/';
 const args = process.argv.slice(2);
-const method = args[0];
-const request = args[1];
-
-console.log(method);
-console.log(request);
+const [method, request, id, title, price, category] = args;
 
 //clase para administrar fetch 
 const Rm = new Rmanager(url, method, request);
-//envia peticon GET y muestra listado en consola
 
-const argx = process.argv.slice(3);
-const [id, title, price, category] = argx;
-//Rm.fetchProducts().then(() => {console.log(Rm.getProduct())})
-// anade json body 
-Rm.setPayload({
+if (method === 'POST') {
+  Rm.setPayload({
+        id: "",
+        title: args[2],
+        price: args[3],
+        description: "string", 
+        category: args[4],
+        image: "http://example.com"
+ });
+} else {
+    Rm.setPayload({
         id: id,
         title: title,
         price: price,
@@ -28,11 +29,9 @@ Rm.setPayload({
         category: category,
         image: "http://example.com"
  });
-
+}
 
 Rm.isRequestValid();
-// envia peticion POST y Muestra respuesta en consola
-//Rm.postProducts().then(() => {console.log(Rm.getProduct())})
 
 }
 //ejecuta main con error catch

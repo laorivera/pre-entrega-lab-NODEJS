@@ -44,7 +44,7 @@ export class Rmanager {
 
 
     isRequestValid(){
-        if(this.#Data.method === 'GET' && this.#Data.request === 'products'){ this.fetchProducts().then(() => console.log(this.getProduct()));
+        if(this.#Data.method === 'GET' && this.#Data.request === 'products' && !this.#Data.payload.id){ this.fetchProducts().then(() => console.log(this.getProduct()));
         }
         else if (this.#Data.method === 'GET' && this.#Data.request === 'products' && this.#Data.payload.id){ console.log(this.#Data.url+this.#Data.request+'/'+this.#Data.payload.id); this.fetchProductID().then(() => console.log(this.getProduct()));
         }
@@ -52,7 +52,6 @@ export class Rmanager {
         }
         else if (this.#Data.method === 'DELETE' && this.#Data.request === 'products') { this.delProducts().then(() => console.log(this.getProduct()));
         }
-        
         else{console.log("error request invalida")}
     }
 
