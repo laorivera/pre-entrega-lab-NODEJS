@@ -21,13 +21,11 @@ export class Rmanager {
         this.#Data.url = url;
         this.#Data.method = method;
         this.#Data.request =  request
-        //this.#Data.payload = payload;
     }
 
     async fetchProducts(){try {const response = await fetch(this.#Data.url+this.#Data.request); this.#Data.fetchdata = await response.json()} catch(error){ console.log("error")}};
-    async fetchProductID(){try {
-        //console.log(this.#Data.url+this.#Data.request)
-        const response = await fetch(this.#Data.url+this.#Data.request+'/'+this.#Data.payload.id); this.#Data.fetchdata = await response.json()} catch(error){console.log("error")}
+    async fetchProductID(){try 
+        {const response = await fetch(this.#Data.url+this.#Data.request+'/'+this.#Data.payload.id); this.#Data.fetchdata = await response.json()} catch(error){console.log("error")}
     }
 
     async postProducts(){try {const response = await fetch(this.#Data.url+this.#Data.request+'/',{
