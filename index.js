@@ -34,8 +34,8 @@ if (method === 'POST') {
 Rm.isRequestValid();
 
 }
-//ejecuta main con error catch
-main()//.catch(error => {console.error("1", error)})
+//ejecuta main con detecion de errores
+main().catch(error => {console.error("1", error)})
 
 
 
