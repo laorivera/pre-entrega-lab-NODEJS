@@ -47,7 +47,7 @@ export class Rmanager {
         }
         else if (this.#Data.method === 'POST' && this.#Data.request === 'products') {this.postProducts().then(() => console.log(this.getProduct())); 
         }
-        else if (this.#Data.method === 'DELETE' && this.#Data.request === 'products') { his.delProducts().then(() => console.log(this.getProduct()));
+        else if (this.#Data.method === 'DELETE' && this.#Data.request === 'products') { this.delProducts().then(() => console.log(this.getProduct()));
         }
         else{console.log("error request invalida")}
     }
