@@ -1,1 +1,2 @@
-# pre-entrega-lab
+# API Sistema de inventario NODEJS
+
