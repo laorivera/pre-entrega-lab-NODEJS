@@ -9,10 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laorivera/pre-entrega-lab.git"
+    "url": "git+https://github.com/laorivera/Product-API-NODEJS.git"
   },
   "keywords": [],
   "author": "Ladislao Rivera",
-  "license": "MIT"
-  
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
