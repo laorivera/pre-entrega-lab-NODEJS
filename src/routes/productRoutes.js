@@ -3,17 +3,19 @@ import { ProductController } from '../controllers/productController.js';
 
 export class ProductRoutes {
 
+  #router = Router();
+
   productController = new ProductController;
 
   constructor(){};
 
    init() {
-        const router = Router();
+        //const router = Router();
         
-        router.get('/product', this.productController.getProducts);
-        router.post('/product', this.productController.postProducts);
-        router.delete('/product', this.productController.delProducts)
+        this.#router.get('/product', this.productController.getProducts);
+        this.#router.post('/product', this.productController.postProducts);
+        this.#router.delete('/product', this.productController.delProducts)
 
-        return router;
+        return this.#router;
     }
 }
