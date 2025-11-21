@@ -11,7 +11,8 @@ export class ProductRoutes {
         const router = Router();
         
         router.get('/product', this.productController.getProducts);
-        //router.post('/product', this.productController.postProducts);
+        router.post('/product', this.productController.postProducts);
+        router.delete('/product', this.productController.delProducts)
 
         return router;
     }

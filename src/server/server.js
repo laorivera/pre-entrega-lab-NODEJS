@@ -5,8 +5,11 @@ export class Server {
     #PORT = 3333;
 
     constructor() {
+        this.jsonParse();
     }
 
+    jsonParse = () => this.#APP.use(express.json());
+   
     addRoute(path, router) {
         this.#APP.use(path, router);
     }

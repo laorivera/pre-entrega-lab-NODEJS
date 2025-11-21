@@ -6,12 +6,21 @@ export class ProductController {
 
     constructor(){}
     
-    getProducts(req, res){
-        return res.json(this.productModels.getProducts())
+    getProducts = (req, res) => {
+        return res.json(this.productModels.getProduct())
     }
-    /*
-    postProducts(req, res){
-        req
+    
+    postProducts = (req, res) => {
+        const newItem = req.body;
+        this.productModels.setProduct(newItem);
+        console.log(this.productModels.getProduct());
+        return res.status(201).json(newItem)
     }
-    */
+
+    delProducts = (req, res) => {
+        const delitemID = req.body.id;
+        this.productModels.delProduct(delitemID);
+        return res.status(201).json(delitemID)
+    }
+    
 }
